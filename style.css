@@ -236,7 +236,7 @@ a {
 }
 
 .sliderDiv {
-    flex: 0 0 calc(100% / 3);
+    flex: 0 0 calc(100% / 3.1);
     background: #f3f3f3;
     box-sizing: border-box;
     display: flex;
@@ -286,11 +286,78 @@ a {
   cursor: not-allowed;
 }
 
+.TabDivMainFour{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+.TabDivMainFour .tabdiv:hover {
+  background-color: #8A0000;
+}
+
+.TabDivMainFour .tabdiv:hover .para {
+  color: #f3f3f3 !important;
+}
+
+.TabDivImgeDiv{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.TabDivMainFour  .tabdiv {
+
+    width: 240px !important;
+}
+.tabdivImg{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 25px 39px;
+    width: 228px;
+    background: rgba(243, 243, 243, 1);
+    border-radius: 8px;
+
+}
+.tabdivImg:hover{
+  background-color: #8A0000;
+}
+.tabdivImg:hover .para{
+  color: white;
+}
+.tabdivImg img {
+  transition: 0.1s;
+}
+
+.tabdivImg:hover img {
+  filter: brightness(0) invert(1);
+}
+.tabdivImg img{
+  height: 51px;
+  width: 51px;
+}
+@media (max-width:1089px) {
+
+.TabDivMainFour {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+ .TabDivMainFour .tabdiv {
+    width: 275px;
+}
+}
 @media (max-width: 992px) {
   .sliderDiv {
     flex: 0 0 calc(100% / 2);
   }
-
+.TabDivMainFour {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+ .TabDivMainFour .tabdiv {
+    width: 275px;
+}
   .paddingTop {
     padding-top: 2rem;
   }
@@ -303,6 +370,12 @@ a {
     max-width: 100%;
     line-height: 44px;
 }
+}
+@media(max-width:767px){
+  .TabDivMainFour{
+      grid-template-columns: repeat(2,1fr);
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -329,6 +402,9 @@ a {
   .redlineText {
     font-size: 20px;
   }
+  .TabDivMainFour .tabdiv {
+    width: 240px;
+}
 
   .SubHeading {
     padding-top: 0px;
@@ -340,4 +416,36 @@ a {
 }
 .sliderContent p.para , .tabdiv p.para {
     color: #000;
+}
+@media (max-width:545px) {
+  .TabDivMainFour {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+}
+ .TabDivMainFour .tabdiv {
+    width: 275px;
+}
+  
+}
+
+
+/* animation */
+
+@keyframes leftRight {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-10px); }
+  50%  { transform: translateX(10px); }
+  75%  { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+.BtnBanner:hover {
+  animation: leftRight 0.6s ease-in-out;
+}
+.footerBtn:hover {
+  animation: leftRight 0.6s ease-in-out;
+}
+.sliderDiv a:hover .redboldText {
+  animation: leftRight 0.6s ease-in-out;
 }
